@@ -3,7 +3,7 @@
     if(!empty($_SESSION['active'])) {
         header('Location: administrador/');
     } else if(!empty($_SESSION['activeP'])) {
-        header('Location: profesor/');
+        header('Location: Estudiante/');
     }
 ?>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
                     <nav>
                       <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">administrador</button>
-                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Alumno</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Estudiante</button>
                         
                       </div>
                     </nav>
@@ -65,15 +65,15 @@
                               <form action=""  onsubmit="return validar()">
                                 <div data-mdb-input-init class="form-outline mb-4">
                                   <label for="usuario">Usuario</label>
-                                <input type="text" name="usuarioProfesor" id="usuarioProfesor" placeholder="Cedula" class="form-control form-control-lg">
+                                <input type="text" name="usuarioEstudiante" id="usuarioEstudiante" placeholder="Cedula" class="form-control form-control-lg">
                                 </div>
                                 <div data-mdb-input-init class="form-outline mb-4">
                                   <label for="password">Contraseña</label>
-                                <input type="password" name="passProfesor" id="passProfesor" placeholder="Contraseña" class="form-control form-control-lg">
-                                <div id="messageProfesor"></div> 
+                                <input type="password" name="passEstudiante" id="passEstudiante" placeholder="Contraseña" class="form-control form-control-lg">
+                                <div id="messageEstudiante"></div> 
                                 </div>
                                 <div class="pt-1 mb-4">
-                                  <<button id="loginProfesor" type="button">INICIAR SESION</button>
+                                  <<button id="loginEstudiante" type="button">INICIAR SESION</button>
                                 </div>
                               
                               </form>

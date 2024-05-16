@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('#loginUsuario').on('click',function(){
         loginUsuario();
     });
-    $('#loginProfesor').on('click',function(){
+    $('#loginEstudiante').on('click',function(){
         loginProfesor();
     });
 })
@@ -28,22 +28,22 @@ function loginUsuario() {
     })
 }
 
-function loginProfesor() {
-    var loginProfesor = $('#usuarioProfesor').val();
-    var passProfesor = $('#passProfesor').val();
+function loginEstudiante() {
+    var loginEstudiante = $('#usuarioEstudiante').val();
+    var passEstudiante = $('#passEstudiante').val();
 
     $.ajax({
-        url: './includes/loginProfesor.php',
+        url: './includes/loginEstudiante.php',
         method: 'POST',
         data: {
-            loginProfesor:loginProfesor,
-            passProfesor:passProfesor
+            loginEstudiante:loginEstudiante,
+            passEstudiante:passEstudiante
         },
         success: function(data) {
-            $('#messageProfesor').html(data);
+            $('#messageEstudiante').html(data);
 
             if(data.indexOf('Redirecting') >= 0) {
-                window.location = 'profesor/';
+                window.location = 'estudiante/';
             }
         }
     })
