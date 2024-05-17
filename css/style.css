@@ -1,83 +1,114 @@
-.navbar-black {
-    background-color: #000000; /* Color de fondo negro */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.bg-image-vertical {
-    position: relative;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto 100%;
-    }
-    
-@media (min-width: 1025px) {
-    .h-custom-2 {
-    height: 100%;
-    }
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.navbar-black {
-        background-color: #000000; /* Color de fondo negro */
+.main-header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
-    
-.bg-success {
-        background-color: #2C3E50 !important; /* Azul gris */
-}
-    
-html, body { 
-        height: 100%; 
-        font-family: 'Ubuntu', sans-serif; 
-} 
-    
-.gfg { 
-        height: 50px; 
-        width: 50px; 
-    
-} 
-    
-.mynav { 
-        color: #fff; 
-} 
-    
-.mynav li a { 
-        color: #fff; 
-        text-decoration: none; 
-        width: 100%; 
-        display: block; 
-        border-radius: 5px; 
-        padding: 8px 5px; 
-} 
-    
-.mynav li a.active { 
-        background: rgba(255, 255, 255, 0.2); 
-} 
-    
-.mynav li a:hover { 
-        background: rgba(255, 255, 255, 0.2); 
-} 
-    
-.mynav li a i { 
-        width: 25px; 
-        text-align: center; 
-} 
-    
-.notification-badge { 
-        background-color: rgba(255, 255, 255, 0.7); 
-        float: right; 
-        color: #222; 
-        font-size: 14px; 
-        padding: 0px 8px; 
-        border-radius: 2px; 
+.main-cont {
+    background: #f2f2f2;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
-#loginUsuario, #loginProfesor{
-        display: block;
-        width: 100%;
-        padding: .7em;
-        border: none;
-        border-radius: 8px;
-        background: #153744;
-        color: #fff;
-        cursor: pointer;
-        }
+.desc-header {
+    width: 100%;
+    height: auto;
+    text-align: center;  
+}
+
+.desc-header img {
+    width: 90%;
+}
+
+.desc-header p {
+    font-size: 2em;
+    color: #336666;
+}
+
+.cont-header {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cont-header h1 {
+    color: #336666;
+}
+
+.cont-header form {
+    width: 350px;
+    height: auto;
+    border: 1px solid #336666;
+    padding: 1em;
+    margin: 2em;
+    border-radius: 1em;
+}
+
+.cont-header form .label {
+    display: block;
+    padding: 10px;
+}
+
+.cont-header input {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#loginUsuario, #loginEstudiante {
+    display: block;
+    width: 100%;
+    padding: .7em;
+    border: none;
+    border-radius: 8px;
+    background: #153744;
+    color: #fff;
+    cursor: pointer;
+}
+
+.app-sidebar__user-avatar {
+    width: 48px;
+    padding: 6px;
+    background: #fff;
+}
+
+.app .app-sidebar, .app .app-nav, .app .app-header {
+    background: #002126 !important;
+}
+
+.app-sidebar__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-sidebar__toggle::before {
+    display: none;
+}
+
+
+
