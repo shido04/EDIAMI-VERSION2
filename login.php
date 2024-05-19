@@ -46,15 +46,15 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                               <form action="" onsubmit="return validar()">
-                                <div data-mdb-input-init class="form-outline mb-4">
+                              <div data-mdb-input-init class="form-outline mb-4">
                                   <label for="usuario">Usuario</label>
-                                <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" class="form-control form-control-lg">
-                                </div>
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                  <label for="password">Contraseña</label>
-                                <input type="password" name="pass" id="pass" placeholder="Contraseña" class="form-control form-control-lg">
-                                  <div id = "messageUsuario"></div>
-                                </div>
+                                  <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" class="form-control form-control-lg">
+                              </div>
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                  <label for="pass">Contraseña</label>
+                                  <input type="password" name="pass" id="pass" placeholder="Contraseña" class="form-control form-control-lg">
+                                  <div id="messageUsuario"></div>
+                              </div>
                                 <div class="pt-1 mb-4">
 									                <button id="loginUsuario" type="button">INICIAR SESION</button>
                                 </div>
@@ -63,17 +63,17 @@
                          </div>
                          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                               <form action=""  onsubmit="return validar()">
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                  <label for="usuario">Usuario</label>
-                                <input type="text" name="usuarioEstudiante" id="usuarioEstudiante" placeholder="Cedula" class="form-control form-control-lg">
-                                </div>
-                                <div data-mdb-input-init class="form-outline mb-4">
-                                  <label for="password">Contraseña</label>
-                                <input type="password" name="passEstudiante" id="passEstudiante" placeholder="Contraseña" class="form-control form-control-lg">
-                                <div id="messageEstudiante"></div> 
-                                </div>
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                  <label for="usuarioEstudiante">Usuario</label>
+                                  <input type="text" name="usuarioEstudiante" id="usuarioEstudiante" placeholder="Cedula" class="form-control form-control-lg">
+                              </div>
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                  <label for="passEstudiante">Contraseña</label>
+                                  <input type="password" name="passEstudiante" id="passEstudiante" placeholder="Contraseña" class="form-control form-control-lg">
+                                  <div id="messageEstudiante"></div>
+                              </div>
                                 <div class="pt-1 mb-4">
-                                  <<button id="loginEstudiante" type="button">INICIAR SESION</button>
+                                  <button id="loginEstudiante" type="button">INICIAR SESION</button>
                                 </div>
                               
                               </form>
@@ -102,7 +102,6 @@
 
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/login.js"></script>
-<script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 
 	

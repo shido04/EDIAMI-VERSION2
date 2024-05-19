@@ -21,7 +21,76 @@
 "sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer" /> 
-	<link rel="stylesheet" href="css/style.css">
+		<style>
+    .bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+@media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+}
+
+.navbar-black {
+        background-color: #000000; /* Color de fondo negro */
+}
+
+    
+.bg-success {
+        background-color: #2C3E50 !important; /* Azul gris */
+}
+    
+html, body { 
+        height: 100%; 
+        font-family: 'Ubuntu', sans-serif; 
+} 
+    
+.gfg { 
+        height: 50px; 
+        width: 50px; 
+    
+} 
+    
+.mynav { 
+        color: #fff; 
+} 
+    
+.mynav li a { 
+        color: #fff; 
+        text-decoration: none; 
+        width: 100%; 
+        display: block; 
+        border-radius: 5px; 
+        padding: 8px 5px; 
+} 
+    
+.mynav li a.active { 
+        background: rgba(255, 255, 255, 0.2); 
+} 
+    
+.mynav li a:hover { 
+        background: rgba(255, 255, 255, 0.2); 
+} 
+    
+.mynav li a i { 
+        width: 25px; 
+        text-align: center; 
+} 
+    
+.notification-badge { 
+        background-color: rgba(255, 255, 255, 0.7); 
+        float: right; 
+        color: #222; 
+        font-size: 14px; 
+        padding: 0px 8px; 
+        border-radius: 2px; 
+}
+ 	</style>
 
 
 </head> 
@@ -144,7 +213,7 @@
 
       <div class="container-fluid px-4 sm:px-6 md:px-8">
         <video controls preload="auto" data-setup="{'playbackRates': [0.5, 1, 1.5, 2], 'fluid': true}">
-    <source src="cusos.mp4" type="video/mp4">
+    <source src="img/cusos.mp4" type="video/mp4">
     <source src="cusos.ogg" type="video/ogg">
     <p class="vjs-no-js">
         Para ver este video, por favor habilita JavaScript y considera actualizar a un navegador web que soporte video HTML5.

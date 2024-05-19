@@ -27,14 +27,12 @@
             <label for="listRol">Rol</label>
             <select class="form-control" name="listRol" id="listRol">
                 <option value="1">Administrador</option>
-                <option value="2">Asistente</option>
             </select>
           </div>
           <div class="form-group">
             <label for="listEstado">Rol</label>
             <select class="form-control" name="listEstado" id="listEstado">
                 <option value="1">Activo</option>
-                <option value="2">Inactivo</option>
             </select>
           </div>
           <div class="modal-footer">

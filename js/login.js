@@ -3,7 +3,7 @@ $(document).ready(function(){
         loginUsuario();
     });
     $('#loginEstudiante').on('click',function(){
-        loginProfesor();
+        loginEstudiante();
     });
 })
 

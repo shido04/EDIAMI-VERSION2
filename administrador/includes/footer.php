@@ -15,6 +15,7 @@
     
 
     <script src="js/functions-usuarios.js"></script>
+    <script src="js/functions-estudiantes.js"></script>
     
   </body>
 </html>

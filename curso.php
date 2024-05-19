@@ -22,7 +22,76 @@
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer" /> 
 
-	<link rel="stylesheet" href="css/style.css">
+	<style>
+    .bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    }
+    
+@media (min-width: 1025px) {
+    .h-custom-2 {
+    height: 100%;
+    }
+}
+
+.navbar-black {
+        background-color: #000000; /* Color de fondo negro */
+}
+
+    
+.bg-success {
+        background-color: #2C3E50 !important; /* Azul gris */
+}
+    
+html, body { 
+        height: 100%; 
+        font-family: 'Ubuntu', sans-serif; 
+} 
+    
+.gfg { 
+        height: 50px; 
+        width: 50px; 
+    
+} 
+    
+.mynav { 
+        color: #fff; 
+} 
+    
+.mynav li a { 
+        color: #fff; 
+        text-decoration: none; 
+        width: 100%; 
+        display: block; 
+        border-radius: 5px; 
+        padding: 8px 5px; 
+} 
+    
+.mynav li a.active { 
+        background: rgba(255, 255, 255, 0.2); 
+} 
+    
+.mynav li a:hover { 
+        background: rgba(255, 255, 255, 0.2); 
+} 
+    
+.mynav li a i { 
+        width: 25px; 
+        text-align: center; 
+} 
+    
+.notification-badge { 
+        background-color: rgba(255, 255, 255, 0.7); 
+        float: right; 
+        color: #222; 
+        font-size: 14px; 
+        padding: 0px 8px; 
+        border-radius: 2px; 
+}
+ 	</style>
 </head> 
 
 <body> 

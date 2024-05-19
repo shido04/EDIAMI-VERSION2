@@ -8,14 +8,14 @@ if(!empty($_POST)) {
         $login = $_POST['loginEstudiante'];
         $pass = $_POST['passEstudiante'];
 
-        $sql = 'SELECT * FROM Estudiante WHERE cedula = ?';
+        $sql = 'SELECT * FROM estudiante WHERE cedula = ?';
         $query = $pdo->prepare($sql);
         $query->execute(array($login));
         $result = $query->fetch(PDO::FETCH_ASSOC);
 
         if($query->rowCount() > 0) {
             if(password_verify($pass, $result['clave'])) {
-                $_SESSION['activeE'] = true;
+                $_SESSION['activeP'] = true;
                 $_SESSION['Estudiante_id'] = $result['Estudiante_id'];
                 $_SESSION['nombre'] = $result['nombre'];
                 $_SESSION['cedula'] = $result['cedula'];
