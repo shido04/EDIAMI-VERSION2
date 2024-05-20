@@ -106,7 +106,7 @@
                   <!-- Elemento de navegación "Log In" alineado a la derecha -->
                   <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a class="app-menu__item" href="login.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">INICIAR</span></a>
+                    <a class="app-menu__item" href="login.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">INICIAR SECION</span></a>
                       </li>
                   </ul>
               </div>

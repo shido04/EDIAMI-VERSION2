@@ -66,7 +66,7 @@
     <header class="app-header">
               <div class="container px-5 ms-xl-">
                 <img src="img/logoe.png" alt="logo">
-                <p>Estudiante:</p>
+                <p>Bienvenido:</p>
                 <p><?= $_SESSION['nombre']?></p>
               </div>
 
