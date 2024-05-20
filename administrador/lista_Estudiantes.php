@@ -27,7 +27,7 @@
                       <th>ID</th>
                       <th>NOMBRE</th>
                       <th>DIRECCION</th>
-                      <th>CLAVE</th>
+                      <th>CEDULA</th>
                       <th>TELEFONO</th>
                       <th>CORREO</th>
                       <th>NIVEL DE ESTUDIO</th>

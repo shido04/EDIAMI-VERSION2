@@ -92,7 +92,7 @@ body {
 
 .app-sidebar__user-avatar {
     width: 48px;
-    padding: 6px;
+    padding: 3px;
     background: #fff;
 }
 
@@ -109,3 +109,5 @@ body {
 .app-sidebar__toggle::before {
     display: none;
 }
+
+

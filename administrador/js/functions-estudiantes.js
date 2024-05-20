@@ -160,7 +160,7 @@ function eliminarEstudiante(id) {
                     var data = JSON.parse(request.responseText);
                     if(data.status) {
                         swal('Eliminar',data.msg,'success');
-                        tableEstudiante.ajax.reload();
+                        tableEstudiantes.ajax.reload();
                     } else {
                         swal('Atencion',data.msg,'error');
                     }

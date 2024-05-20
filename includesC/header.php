@@ -1,9 +1,4 @@
-<?php
-  session_start();
-  if(empty($_SESSION['activeP'])){
-    header('Location: ../');
-  }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- Asegúrate de cargar la versión completa de jQuery si necesitas AJAX -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -66,8 +61,7 @@
     <header class="app-header">
               <div class="container px-5 ms-xl-">
                 <img src="img/logoe.png" alt="logo">
-                <p>Estudiante:</p>
-                <p><?= $_SESSION['nombre']?></p>
+                <p></p>
               </div>
 
       <ul class="app-nav">
@@ -112,7 +106,7 @@
                   <!-- Elemento de navegación "Log In" alineado a la derecha -->
                   <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                    <a class="app-menu__item" href="../logout.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">Logout</span></a>
+                    <a class="app-menu__item" href="login.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">INICIAR</span></a>
                       </li>
                   </ul>
               </div>
