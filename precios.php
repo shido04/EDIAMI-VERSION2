@@ -1,61 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
- <!-- Asegúrate de cargar la versión completa de jQuery si necesitas AJAX -->
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
- <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-black">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Elementos de navegación alineados a la izquierda -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                </li>
-				<li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Cursos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">0ffice</a>
-                        <a class="dropdown-item" href="#">Navegacion</a>
-                        <a class="dropdown-item" href="#">Etc</a>
-                    </div>
-					
-                </li>
-           
-                <li class="nav-item">
-                    <a class="nav-link" href="precios.php">Precios</a>
-                </li>
-				 </ul>
-                
-            <!-- Elemento de navegación "Log In" alineado a la derecha -->
-            <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                    <a class="nav-link" href="login.php">Iniciar</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-	
-	
-</nav>
+<?php
+require_once 'includesC/header.php';
 
-<div class="bg-light">
+
+?>
+
+<div class="position-relative primary pt-5 pb-5 sm:px-4 lg:pt-8 lg:pb-7 lg:px-6 pt-20">
 
  <div class="pt-5 pt-sm-6 pt-lg-8">
     <div class="container-fluid px-3 px-sm-4 px-lg-5">
@@ -407,3 +356,9 @@
 </body>
 
 </html>
+
+<?php
+require_once 'includesC/footer.php'
+?>
+
+
