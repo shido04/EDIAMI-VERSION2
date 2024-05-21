@@ -12,6 +12,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .app-content {
+        /* Establece un fondo para visualizar el área de contenido */
+        background-color: #f0f0f0;
+        padding: 30px;
+      }
+    .row {
+        margin-bottom: px; /* Espacio entre filas */
+      }
+    .col-md-12 img {
+        width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+        height: auto; /* Mantiene las proporciones de la imagen */
+        object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin distorsionarse */
+        border-radius: 5px; /* Redondea las esquinas de la imagen */
+      }
+    </style>
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">

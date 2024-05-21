@@ -2,46 +2,45 @@
 require_once 'includes/header.php';
 require_once '../includes/conexion.php';
 
-
-$idEstudiante = $_SESSION['Estudiante_id'];
-
-
+$sql ="SELECT cursos_id, nombre, autor, imagen, video, categoria_id, nivel_id, estado
+FROM cursos;
+";
+$query = $pdo->prepare($sql);
+$query->execute();
+$row = $query->rowCount();
 
 ?>
 
 
-<<div class="position-relative primary pt-5 pb-5 sm:px-4 lg:pt-8 lg:pb-7 lg:px-6 pt-20"> <!-- Añade pt-20 aquí -->
+<div class="position-relative primary pt-5 pb-5 sm:px-4 lg:pt-8 lg:pb-7 lg:px-6 pt-30">
     <div class="position-absolute w-100 h-50"></div>
     <div class="container-lg mx-auto">
-        <div class="text-center">
-            <h2 class="text-3xl font-weight-bold text-dark">
-                EDIAMI
-            </h2>
-            <p class="mt-3 text-lg text-muted">
-                Edad Digital: Introducción del Adulto Mayor al Internet
-            </p>
+        <div class="row">
+            <div class="col-md-12 border shadow p-2 bg-info text-white d-flex align-items-center justify-content-center">
+                <h3 class="display-4">EDIAMI</h3>
+            </div>
         </div>
 
-        <div class="mt-12 row gap-3">
-            <!-- Aquí iría el bucle de cursos -->
-            <div class="col-lg-4">
-                <div class="card shadow-lg" id="cardCurso">
-                    <img src="img/word.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <p class="card-text">
-                            <a href="curso.php" class="text-primary" id="enlaceCurso">
-                                Categoria
-                            </a>
-                        </p>
-                        <a href="curso.php" class="card-title" id="enlaceCursoTitulo">
-                            
-                        </a>
-                        <p class="card-text">
-                            
-                        </p>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-12 text-center border mt-3 p-4 bg-light">
+                <h4>Edad Digital: Introducción del Adulto Mayor al Internet</h4>
             </div>
+        </div>
+        <div class="row">
+            <?php if ($row > 0):?>
+                <?php while ($data = $query->fetch()):?>
+                    <div class="col-md-4 text-center border mt-3 p-4 bg-light">
+                        <div class="card m-2 shadow" style="width: 23rem;">
+                            <img src="../almacen/<?= htmlspecialchars($data['imagen'])?>" class="card-img-top" alt="<?= htmlspecialchars($data['nombre'])?>">
+                            <div class="card-body">
+                                <h4 class="card-title text-center"><?= htmlspecialchars($data['nombre'])?></h4>
+                                <p>Categoría: <?= htmlspecialchars($data['categoria_id'])?></p>
+                                <a href="contenido.php?curso=<?= htmlspecialchars($data['cursos_id'])?>" class="btn btn-primary">Acceder</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile;?>
+            <?php endif;?>
         </div>
     </div>
 </div>
