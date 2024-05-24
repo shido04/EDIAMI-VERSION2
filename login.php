@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="cont-header">
-                <h1>Bienvenid@</h1>
+                <h1></h1>
                 
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">

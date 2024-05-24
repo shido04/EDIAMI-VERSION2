@@ -29,7 +29,7 @@ $row = $query->rowCount();
         <div class="row">
             <?php if ($row > 0):?>
                 <?php while ($data = $query->fetch()):?>
-                    <div class="col-md-4 text-center border mt-3 p-4 bg-light">
+                    
                         <div class="card m-2 shadow" style="width: 23rem;">
                             <img src="../almacen/<?= htmlspecialchars($data['imagen'])?>" class="card-img-top" alt="<?= htmlspecialchars($data['nombre'])?>">
                             <div class="card-body">
@@ -38,7 +38,7 @@ $row = $query->rowCount();
                                 <a href="contenido.php?curso=<?= htmlspecialchars($data['cursos_id'])?>" class="btn btn-primary">Acceder</a>
                             </div>
                         </div>
-                    </div>
+                    
                 <?php endwhile;?>
             <?php endif;?>
         </div>
@@ -46,14 +46,9 @@ $row = $query->rowCount();
 </div>
 
 
-<script>
-    document.getElementById('cardCurso').addEventListener('click', function(event) {
-        event.preventDefault(); // Evita la acción predeterminada del enlace
-        window.location.href = 'curso.php'; // Redirige al usuario a cursos.php
-    });
-</script>
 
-    <!-- Fin del bucle de cursos -->
+
+  
 </div>
 
 

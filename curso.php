@@ -22,7 +22,7 @@
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer" /> 
 
-	<style>
+		<style>
     .bg-image-vertical {
     position: relative;
     overflow: hidden;
@@ -92,6 +92,8 @@ html, body {
         border-radius: 2px; 
 }
  	</style>
+
+
 </head> 
 
 <body> 

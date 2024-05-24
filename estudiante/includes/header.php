@@ -102,10 +102,10 @@
                       </li>
 
                       <li class="nav-item">
-                      <a class="app-menu__item" href=""><i class="app-menu__icon fas fa-list-alt"></i><span class="app-menu__label">Quienes somos</span></a>
+                      <a class="app-menu__item" href="Somos.php"><i class="app-menu__icon fas fa-list-alt"></i><span class="app-menu__label">Quienes somos</span></a>
                       </li>
               <li class="nav-item">
-              <a class="app-menu__item" href=""><i class="app-menu__icon fas fa-list-alt"></i><span class="app-menu__label">Precios</span></a>
+              <a class="app-menu__item" href="precios.php"><i class="app-menu__icon fas fa-list-alt"></i><span class="app-menu__label">Precios</span></a>
                       </li>
                       
                   </ul>

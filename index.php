@@ -49,12 +49,7 @@ $row = $query->rowCount();
 
 
 
-<script>
-    document.getElementById('cardCurso').addEventListener('click', function(event) {
-        event.preventDefault(); // Evita la acción predeterminada del enlace
-        window.location.href = 'curso.php'; // Redirige al usuario a cursos.php
-    });
-</script>
+
 
     <!-- Fin del bucle de cursos -->
 </div>
