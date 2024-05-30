@@ -8,6 +8,7 @@
     <script src="../js/plugins/pace.min.js"></script>
     <script src="../js/fontawesome.js"></script>
     <script type="text/javascript" src="../js/plugins/sweetalert.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <!-- Page specific javascripts-->
     <!-- Data table plugin-->
     <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
