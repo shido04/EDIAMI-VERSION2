@@ -31,20 +31,20 @@ if (isset($_GET['curso'])) {
         </div>
         <?php
 
-        // Recibir el ID del curso desde la URL
+        
         $cursoId = $_GET['curso']?? '';
 
         if (!empty($cursoId)) {
-            // Preparar y ejecutar la consulta para obtener la actividad del curso
+            
             $sql = "SELECT actividad FROM cursos WHERE cursos_id = :id";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':id', $cursoId, PDO::PARAM_INT);
             $stmt->execute();
             
-            // Obtener la actividad
+            
             $actividad = $stmt->fetchColumn();
             
-            // Mostrar la actividad
+            
             echo "<div class='container'>";
             echo "<h2> </h2>";
             echo "<p>$actividad</p>"; 
