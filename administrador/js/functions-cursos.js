@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         "columns": [
             {"data":"acciones"},
-            {"data":"cursos_id"}, // Corregido aquí
+            {"data":"cursos_id"}, 
             {"data":"nombre"},
             {"data":"autor"},
             {"data":"imagen"},
             {"data":"video"},
             {"data":"categoria_id"},
             {"data":"nivel_id"},
-            {"data":"estado"} // Corregido aquí
+            {"data":"estado"},
+            {"data":"actividad"},
         ],         
         "dom": "lBfrtip",
         "buttons": [
@@ -67,9 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var video = document.querySelector('#video').files[0]; 
         var listCategoria = document.querySelector('#listCategoria').value;
         var listNivel = document.querySelector('#listNivel').value;
-        var estado = document.querySelector('#listEstado').value; // Asegúrate de que este selector sea correcto
-    
-        if(nombre == '' || autor == '' || imagen == '' || video == '' || listCategoria == '' || listNivel == '' ) { // Agrega la validación para el campo estado
+        var estado = document.querySelector('#listEstado').value;
+        var actividad = document.querySelector('#actividad').value;
+        if(nombre == '' || autor == '' || imagen == '' || video == '' || listCategoria == '' || listNivel == ''|| actividad == '' ) { 
     
             swal('Atencion','Todos los campos son necesarios','error');
             return false;
@@ -90,14 +91,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         swal('Cursos',data.msg,'success');
                         tableCursos.ajax.reload();
                     } else {
-                        swal('Atencion',data.msg,'error');
+                        swal('Atención', data.msg, 'error');
                         console.error("Error parsing JSON:", request.responseText);
                     }
                 } catch(error) {
                     console.error("Error parsing JSON:", error);
+                    // Mostrar mensaje de error personalizado
+                    swal('Error', 'Hubo un problema al procesar la solicitud. Por favor, inténtalo de nuevo.', 'error');
                 }
             }
         }
+        
         
         
     }
@@ -118,6 +122,9 @@ function editarCurso(idCurso) {
     document.querySelector('#tituloModal').innerHTML = 'Actualizar Curso';
     document.querySelector('#action').innerHTML = 'Actualizar';
 
+    // Agrega el campo oculto con el ID del curso
+    document.querySelector('#formCurso').insertAdjacentHTML('beforebegin', '<input type="hidden" name="cursos_id" value="' + idCursoActual + '">');
+
     var request = (window.XMLHttpRequest)? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var url = './models/cursos/edit-curso.php?idCurso=' + idCursoActual;
     request.open('GET', url, true);
@@ -129,11 +136,10 @@ function editarCurso(idCurso) {
                 document.querySelector('#cursos_id').value = data.data.cursos_id;
                 document.querySelector('#nombre').value = data.data.nombre;
                 document.querySelector('#autor').value = data.data.autor;
-                document.querySelector('#imagen').value = ''; // Asumiendo que quieres resetear el input de imagen
-                document.querySelector('#video').value = ''; // Asumiendo que quieres resetear el input de video
                 document.querySelector('#listCategoria').value = data.data.categoria_id;
                 document.querySelector('#listNivel').value = data.data.nivel_id;
                 document.querySelector('#listEstado').value = data.data.estado;
+                document.querySelector('#actividad').value = data.data.actividad;
 
                 $('#modalCurso').modal('show');
             } else {
@@ -142,6 +148,7 @@ function editarCurso(idCurso) {
         }
     }
 }
+
 
 function eliminarCurso(idCurso) {
     var idCursoActual = idCurso;
@@ -158,7 +165,7 @@ function eliminarCurso(idCurso) {
     }, function(confirm) {
         if(confirm) {
             var request = (window.XMLHttpRequest)? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var url = './models/cursos/delete-curso.php'; // Asegúrate de que esta URL es correcta
+            var url = './models/cursos/delete-curso.php'; 
             request.open('POST', url, true);
             var strData = "idCurso=" + idCursoActual;
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -168,7 +175,7 @@ function eliminarCurso(idCurso) {
                     var data = JSON.parse(request.responseText);
                     if(data.status) {
                         swal('Eliminar', data.msg, 'success');
-                        tableCursos.ajax.reload(); // Recarga la tabla después de eliminar
+                        tableCursos.ajax.reload(); 
                     } else {
                         swal('Atención', data.msg, 'error');
                     }

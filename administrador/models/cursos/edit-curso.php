@@ -15,4 +15,6 @@ if(isset($_GET['idCurso'])) {
     }
     echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
 }
+
+
 ?>

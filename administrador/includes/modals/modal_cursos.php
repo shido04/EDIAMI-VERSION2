@@ -44,6 +44,10 @@
               </select>
           </div>
           <div class="form-group">
+                <label for="actividad">Actividad:</label>
+                <textarea class="form-control" name="actividad" id="actividad" cols="30" rows="10"></textarea>
+          </div>
+          <div class="form-group">
             <label for="listEstado">Estado</label>
             <select class="form-control" name="listEstado" id="listEstado">
                 <option value="1">Activo</option>

@@ -32,6 +32,7 @@
                       <th>CATEGORIA</th>
                       <th>NIVEL</th>
                       <th>ESTADO</th>
+                      <th>ACTIVIDAD</th>
                     </tr>
                   </thead>
                   <tbody>

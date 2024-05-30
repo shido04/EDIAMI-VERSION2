@@ -1,43 +1,63 @@
 <?php
 require_once '../../../includes/conexion.php';
 
-// Carpeta donde se guardarán los archivos
 $carpetaAlmacen = '../../../almacen/';
 
-// Verificar si se envió el formulario
+// Verifica si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cursos_id = $_POST['cursos_id'];
     $nombre = $_POST['nombre'];
     $autor = $_POST['autor'];
-    $imagen = $_FILES['imagen']['name']; // Nombre original del archivo de imagen
-    $video = $_FILES['video']['name']; // Nombre original del archivo de video
+    $imagen = $_FILES['imagen']['name'];
+    $video = $_FILES['video']['name'];
     $categoria_id = $_POST['listCategoria'];
     $nivel_id = $_POST['listNivel'];
     $estado = $_POST['listEstado'];
+    $actividad = $_POST['actividad'];
 
-    // Mover los archivos a la carpeta especificada
-    $imagenMoverida = $carpetaAlmacen. basename($_FILES['imagen']['name']);
-    move_uploaded_file($_FILES['imagen']['tmp_name'], $imagenMoverida);
+    // Verifica si se está editando un curso existente
+    if ($cursos_id) {
+        // Prepara la consulta de actualización
+        $sql = "UPDATE cursos SET nombre =?, autor =?, imagen =?, video =?, categoria_id =?, nivel_id =?, estado =?, actividad =? WHERE cursos_id =?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(1, $nombre);
+        $stmt->bindParam(2, $autor);
+        $stmt->bindParam(3, $imagen);
+        $stmt->bindParam(4, $video);
+        $stmt->bindParam(5, $categoria_id);
+        $stmt->bindParam(6, $nivel_id);
+        $stmt->bindParam(7, $estado);
+        $stmt->bindParam(8, $actividad);
+        $stmt->bindParam(9, $cursos_id);
 
-    $videoMoverido = $carpetaAlmacen. basename($_FILES['video']['name']);
-    move_uploaded_file($_FILES['video']['tmp_name'], $videoMoverido);
-
-    // Aquí va tu lógica para insertar los datos en la base de datos
-
-    // Ejemplo de inserción en la base de datos usando PDO
-    $sql = "INSERT INTO cursos (nombre, autor, imagen, video, categoria_id, nivel_id, estado) VALUES (:nombre, :autor, :imagen, :video, :categoria_id, :nivel_id, :estado)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':autor', $autor);
-    $stmt->bindParam(':imagen', $imagen); // Usamos el nombre original del archivo
-    $stmt->bindParam(':video', $video); // Usamos el nombre original del archivo
-    $stmt->bindParam(':categoria_id', $categoria_id);
-    $stmt->bindParam(':nivel_id', $nivel_id);
-    $stmt->bindParam(':estado', $estado);
-
-    if ($stmt->execute()) {
-        echo json_encode(['status' => true, 'msg' => 'Curso agregado correctamente']);
+        if ($stmt->execute()) {
+            echo json_encode(['status' => true,'msg' => 'Curso actualizado correctamente']);
+        } else {
+            echo json_encode(['status' => false,'msg' => 'Hubo un error al actualizar el curso']);
+        }
     } else {
-        echo json_encode(['status' => false, 'msg' => 'Hubo un error al agregar el curso']);
+        // Proceso para insertar un nuevo curso
+        $imagenMoverida = $carpetaAlmacen. basename($_FILES['imagen']['name']);
+        move_uploaded_file($_FILES['imagen']['tmp_name'], $imagenMoverida);
+
+        $videoMoverido = $carpetaAlmacen. basename($_FILES['video']['name']);
+        move_uploaded_file($_FILES['video']['tmp_name'], $videoMoverido);
+
+        $sql = "INSERT INTO cursos (nombre, autor, imagen, video, categoria_id, nivel_id, estado, actividad) VALUES (?,?,?,?,?,?,?,?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(1, $nombre);
+        $stmt->bindParam(2, $autor);
+        $stmt->bindParam(3, $imagen);
+        $stmt->bindParam(4, $video);
+        $stmt->bindParam(5, $categoria_id);
+        $stmt->bindParam(6, $nivel_id);
+        $stmt->bindParam(7, $estado);
+        $stmt->bindParam(8, $actividad);
+
+        if ($stmt->execute()) {
+            echo json_encode(['status' => true,'msg' => 'Curso agregado correctamente']);
+        } else {
+            echo json_encode(['status' => false,'msg' => 'Hubo un error al agregar el curso']);
+        }
     }
 }

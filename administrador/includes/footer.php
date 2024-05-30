@@ -1,5 +1,7 @@
    <!-- Essential javascripts for application to work-->
     <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/main.js"></script>
@@ -17,6 +19,7 @@
     <script src="js/functions-usuarios.js"></script>
     <script src="js/functions-estudiantes.js"></script>
     <script src="js/functions-cursos.js"></script>
+    
 
     
   </body>

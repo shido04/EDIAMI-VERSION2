@@ -1,5 +1,6 @@
 <?php
-require_once 'includ/header.php';
+require_once 'includes/headr.php';
+require_once '../includes/conexion.php';
 
 
 ?>
@@ -14,6 +15,33 @@ require_once 'includ/header.php';
                 <h4>Descripcion del cursos</h4>
             </div>
         </div>
+        <?php
+
+        // Recibir el ID del curso desde la URL
+        $cursoId = $_GET['curso']?? '';
+
+        if (!empty($cursoId)) {
+            // Preparar y ejecutar la consulta para obtener la actividad del curso
+            $sql = "SELECT actividad FROM cursos WHERE cursos_id = :id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':id', $cursoId, PDO::PARAM_INT);
+            $stmt->execute();
+            
+            // Obtener la actividad
+            $actividad = $stmt->fetchColumn();
+            
+            // Mostrar la actividad
+            echo "<div class='container'>";
+            echo "<h2>Actividad del Curso</h2>";
+            echo "<p>$actividad</p>"; // Asegúrate de escapar o limpiar la salida si es necesario
+            echo "</div>";
+        } else {
+            echo "No se proporcionó un ID de curso.";
+        }
+        ?>
+
+        
+    
         
         
     </div>
@@ -27,5 +55,5 @@ require_once 'includ/header.php';
 
 
 <?php
-require_once 'includ/footer.php';
+require_once 'includes/footer.php';
 ?>

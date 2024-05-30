@@ -11,6 +11,6 @@
       <li><a class="app-menu__item" href="lista_usuarios.php"><i class="app-menu__icon fas fa-users"></i><span class="app-menu__label">Usuarios</span></a></li>
       <li><a class="app-menu__item" href="lista_Estudiantes.php"><i class="app-menu__icon fas fa-user-graduate"></i><span class="app-menu__label">Estudiantes</span></a></li>
       <li><a class="app-menu__item" href="lista_Cursos.php"><i class="app-menu__icon fas fa-list-alt"></i><span class="app-menu__label">Cursos</span></a></li>
-      <li><a class="app-menu__item" href="../logout.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">Logout</span></a></li>
+      <li><a class="app-menu__item" href="../logout.php"><i class="app-menu__icon fas fa-sign-out-alt"></i><span class="app-menu__label">Cerrar sesion</span></a></li>
       </ul>
     </aside>
